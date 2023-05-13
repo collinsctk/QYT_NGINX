@@ -21,9 +21,12 @@
 
 ### 直接用docker-compose拉起镜像
 ```shell
+# 进入docker-compose.yaml相同的目录
 [root@localhost QYT_NGINX]# pwd
 /QYT_NGINX
+# 构建镜像
 [root@localhost QYT_NGINX]# docker-compose build
+# 拉起服务
 [root@localhost QYT_NGINX]# docker-compose up -d
 
 ```
