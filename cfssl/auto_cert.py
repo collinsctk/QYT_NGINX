@@ -16,16 +16,16 @@ def system_cmd(cmd):
     return str_stdout, str_stderr
 
 
-print(system_cmd('cp ./cfssl /usr/bin/cfssl'))
-print(system_cmd('cp ./cfssl-json /usr/bin/cfssl-json'))
-print(system_cmd('cp ./cfssl-certinfo /usr/bin/cfssl-certinfo'))
-print(system_cmd('chmod +x /usr/bin/cfssl*'))
+system_cmd('cp ./cfssl /usr/bin/cfssl')
+system_cmd('cp ./cfssl-json /usr/bin/cfssl-json')
+system_cmd('cp ./cfssl-certinfo /usr/bin/cfssl-certinfo')
+system_cmd('chmod +x /usr/bin/cfssl*')
 
 system_cmd('mkdir -p /opt/certs')
 system_cmd('cp ./ca-config.json /opt/certs/ca-config.json')
 system_cmd('cp ./ca-csr.json /opt/certs/ca-csr.json')
 system_cmd('cp ./ca.csr /opt/certs/ca.csr')
-system_cmd('cp ./ca.pem /opt/certs/ca.pem')
+system_cmd('cp ./ca.cer /opt/certs/ca.cer')
 system_cmd('cp ./ca-key.pem /opt/certs/ca-key.pem')
 
 input_domain = input('请输入域名:')
@@ -53,7 +53,7 @@ with open('/opt/certs/server_request.json', 'w') as f:
 
 # os.chdir('/opt/certs')
 
-system_cmd('cfssl gencert -ca=/opt/certs/ca.pem -ca-key=/opt/certs/ca-key.pem '
+system_cmd('cfssl gencert -ca=/opt/certs/ca.cer -ca-key=/opt/certs/ca-key.pem '
            '-config=/opt/certs/ca-config.json -profile=server '
            '/opt/certs/server_request.json |cfssl-json -bare server')
 
