@@ -19,6 +19,7 @@ ADD server.key /etc/pki/nginx/private/server.key
 
 # 拷贝目录
 COPY static /usr/share/nginx/static
+COPY html /usr/share/nginx/html
 
 # 启动nginx
 CMD ["nginx", "-g", "daemon off;"]

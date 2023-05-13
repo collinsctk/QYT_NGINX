@@ -1,0 +1,20 @@
+{
+    "CN": "qytca",
+    "hosts": [
+    ],
+    "key": {
+        "algo": "rsa",
+        "size": 4096
+    },
+    "names": [
+        {
+            "C": "CN",
+            "ST": "beijing",
+            "L": "beijing",
+            "O": "qytang"
+        }
+    ],
+    "ca": {
+        "expiry": "175200h"
+    }
+}
