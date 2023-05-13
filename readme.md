@@ -1,4 +1,5 @@
 ### 前期环境准备, 关闭防火墙(firewalld)和selinux
+- linux环境
 - docker
 - docker-compose
 - 互联网
@@ -6,9 +7,11 @@
 
 ### 执行脚本产生证书与秘钥
 ```shell
+# 进入cfssl目录
 [root@localhost cfssl]# pwd
 /QYT_NGINX/cfssl
 
+# 客户输入域名, 产生证书与秘钥文件
 [root@localhost cfssl]# python3 auto_cert.py
 请输入域名:www.qytang.com
 证书文件被输出到: /QYT_NGINX/cfssl/server.pem
