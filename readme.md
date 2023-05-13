@@ -1,3 +1,9 @@
+### 前期环境准备, 关闭防火墙(firewalld)和selinux
+- docker
+- docker-compose
+- 互联网
+
+
 ### 执行脚本产生证书与秘钥
 ```shell
 [root@localhost cfssl]# pwd
