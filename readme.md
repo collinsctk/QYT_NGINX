@@ -4,6 +4,7 @@
 - docker-compose
 - 互联网
 - openssl
+- python3
 
 ### 执行脚本产生证书与秘钥
 ```shell
