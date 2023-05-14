@@ -5,6 +5,13 @@ USER root
 #修改时区为东八区
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     echo 'Asia/Shanghai' >/etc/timezone
+    
+RUN sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+    -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.aliyun.com/rockylinux|g' \
+    -i.bak \
+    /etc/yum.repos.d/[Rr]ocky*.repo
+ 
+RUN dnf makecache
 
 # 安装epel-release
 RUN yum install -y epel-release
