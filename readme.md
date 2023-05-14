@@ -3,7 +3,7 @@
 - docker
 - docker-compose
 - 互联网
-
+- openssl
 
 ### 执行脚本产生证书与秘钥
 ```shell
