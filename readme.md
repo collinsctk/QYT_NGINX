@@ -14,8 +14,10 @@
 # 客户输入域名, 产生证书与秘钥文件
 [root@localhost cfssl]# python3 auto_cert.py
 请输入域名:www.qytang.com
-证书文件被输出到: /QYT_NGINX/cfssl/server.pem
-证书秘钥被输出到: /QYT_NGINX/cfssl/server-key.pem
+明文证书文件到: /root/QYT_NGINX/cfssl/server.pem
+明文秘钥文件: /root/QYT_NGINX/cfssl/server-key.pem
+PKCS12加密打包后的文件:/root/QYT_NGINX/cfssl/www.qytang.com.p12
+PKCS12加密密码为:Cisc0123
 
 ```
 
@@ -38,11 +40,5 @@ QYT_NGINX/cfssl/ca.cer
 
 # 根证书的秘钥
 QYT_NGINX/cfssl/ca-key.pem
-
-```
-
-# 如果想输出PKCS12格式的证书请使用如下命令
-```shell
-openssl pkcs12 -export -out server.p12 -inkey server-key.pem -in server.pem
 
 ```
