@@ -40,3 +40,9 @@ QYT_NGINX/cfssl/ca.cer
 QYT_NGINX/cfssl/ca-key.pem
 
 ```
+
+# 如果想输出PKCS12格式的证书请使用如下命令
+```shell
+openssl pkcs12 -export -out server.p12 -inkey server-key.pem -in server.pem
+
+```
