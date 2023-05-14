@@ -71,3 +71,4 @@ system_cmd(f'openssl pkcs12 -export -out {input_domain.strip()}.p12 -inkey serve
 print(f'明文证书文件到: {os.getcwd()}/server.pem')
 print(f'明文秘钥文件: {os.getcwd()}/server-key.pem')
 print(f'PKCS12加密打包后的文件:{os.getcwd()}/{input_domain.strip()}.p12')
+print('PKCS12加密密码为:Cisc0123')
