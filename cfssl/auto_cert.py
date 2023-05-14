@@ -67,6 +67,7 @@ system_cmd('cfssl gencert -ca=/opt/certs/ca.cer -ca-key=/opt/certs/ca-key.pem '
 # 拷贝证书与秘钥到NGINX目录
 system_cmd('cp ./server-key.pem ../server.key')
 system_cmd('cp ./server.pem ../server.crt')
-
-print(f'证书文件被输出到: {os.getcwd()}/server.pem')
-print(f'证书秘钥被输出到: {os.getcwd()}/server-key.pem')
+system_cmd(f'openssl pkcs12 -export -out {input_domain.strip()}.p12 -inkey server-key.pem -in server.pem -passout pass:Cisc0123')
+print(f'明文证书文件到: {os.getcwd()}/server.pem')
+print(f'明文秘钥文件: {os.getcwd()}/server-key.pem')
+print(f'PKCS12加密打包后的文件:{os.getcwd()}/{input_domain.strip()}.pem')
