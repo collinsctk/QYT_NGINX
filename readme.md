@@ -34,7 +34,7 @@ PKCS12加密密码为:Cisc0123
 
 ```
 
-### 证书介绍
+### 根证书介绍
 ```angular2html
 # 根证书(有效期20年)
 QYT_NGINX/cfssl/ca.cer
