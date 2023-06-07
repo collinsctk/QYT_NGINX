@@ -20,7 +20,7 @@
                     "client auth"
                 ]
             },
-            "intermediate_ca": {
+            "subca": {
                 "usages": [
                     "signing",
                     "key encipherment",
