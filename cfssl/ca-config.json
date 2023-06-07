@@ -21,7 +21,12 @@
                 ]
             },
             "intermediate_ca": {
-                "usages": ["cert sign"],
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "cert sign",
+                    "crl sign"
+                ],
                 "expiry": "87600h",
                 "ca_constraint": {
                   "is_ca": true,
