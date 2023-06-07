@@ -20,6 +20,14 @@
                     "client auth"
                 ]
             },
+            "intermediate_ca": {
+                "usages": ["cert sign"],
+                "expiry": "87600h",
+                "ca_constraint": {
+                  "is_ca": true,
+                  "max_path_len": 0,
+                  "max_path_len_zero": true
+            },
             "peer": {
                 "expiry": "87600h",
                 "usages": [
