@@ -6,6 +6,26 @@
 - openssl
 - python3
 
+```shell
+yum install -y gcc python3.9 python39-devel git
+
+ln -sb /usr/bin/python3.9 /usr/bin/python3
+ln -sb /usr/bin/pip3.9 /usr/bin/pip3
+
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+yum-config-manager \
+                  --add-repo \
+                  http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+yum install -y docker-ce docker-ce-cli containerd.io
+
+systemctl start docker
+systemctl enable docker
+
+pip3 install docker-compose
+
+```
 ### 执行脚本产生证书与秘钥
 ```shell
 # 进入cfssl目录
