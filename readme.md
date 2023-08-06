@@ -25,6 +25,8 @@ systemctl enable docker
 
 pip3 install docker-compose
 
+git clone https://github.com/collinsctk/QYT_NGINX.git
+
 ```
 ### 执行脚本产生证书与秘钥
 ```shell
