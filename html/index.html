@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url('/mnt/data/A_dynamic_and_energetic_background_for_a_success-t.png') no-repeat center center fixed;
+            background: url('/static/success.webp') no-repeat center center fixed;
             background-size: cover;
             color: white;
             font-family: Arial, sans-serif;
@@ -27,19 +27,7 @@
 </head>
 <body>
     <div class="center-text">
-        <span id="random-numbers"></span>
+        <span id="success-code">12345</span>
     </div>
-
-    <script>
-        function getRandomNumbers(count) {
-            const numbers = [];
-            for (let i = 0; i < count; i++) {
-                numbers.push(Math.floor(10000 + Math.random() * 90000));
-            }
-            return numbers.join(' ');
-        }
-
-        document.getElementById('random-numbers').innerText = getRandomNumbers(5);
-    </script>
 </body>
 </html>
