@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Page</title>
+    <title>Success Code</title>
     <style>
-        body {
+        body, html {
+            height: 100%;
             margin: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background: url('/static/success.webp') no-repeat center center fixed;
             background-size: cover;
-            color: white;
             font-family: Arial, sans-serif;
+            color: white;
         }
-        .center-text {
+        .overlay {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            font-size: 3em;
             background: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
@@ -34,7 +33,7 @@
     </style>
 </head>
 <body>
-    <div class="center-text">
+    <div class="overlay">
         <div>Success Code</div>
         <div class="success-code">12345</div>
     </div>
