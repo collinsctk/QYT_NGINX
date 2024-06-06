@@ -2,6 +2,7 @@ version: '3'
 services:
   nginx:
     build: .
+    privileged: true
     restart: always
     networks:
       - qytang_network
