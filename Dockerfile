@@ -5,12 +5,12 @@ USER root
 #修改时区为东八区
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     echo 'Asia/Shanghai' >/etc/timezone
-    
+
 RUN sed -e 's|^mirrorlist=|#mirrorlist=|g' \
     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.aliyun.com/rockylinux|g' \
     -i.bak \
     /etc/yum.repos.d/[Rr]ocky*.repo
- 
+
 RUN dnf makecache
 
 # 安装epel-release
@@ -18,7 +18,7 @@ RUN yum install -y epel-release
 
 # 安装必要工具
 RUN yum install -y nginx && yum install -y python3.8 && yum install -y gcc && yum install -y python38-devel && yum install -y net-tools && yum install -y bind-utils && yum install -y lrzsz && yum install -y curl && yum install -y dos2unix
-
+RUN yum install -y iptables iproute
 
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD server.crt /etc/pki/nginx/server.crt
@@ -28,6 +28,10 @@ ADD server.key /etc/pki/nginx/private/server.key
 COPY static /usr/share/nginx/static
 COPY html /usr/share/nginx/html
 
-# 启动nginx
-CMD ["nginx", "-g", "daemon off;"]
+# 添加启动脚本
+COPY start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
+# 设置容器启动时执行的命令
+CMD ["/usr/local/bin/start.sh"]
 
