@@ -37,7 +37,6 @@ RUN chmod +x /usr/local/bin/start.sh
 
 # 设置容器启动时执行的命令
 CMD ["/usr/local/bin/start.sh"]
-# 启动nginx
-CMD ["nginx", "-g", "daemon off;"]
+
 
 
