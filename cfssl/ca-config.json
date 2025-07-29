@@ -27,6 +27,7 @@
                     "cert sign",
                     "crl sign"
                 ],
+                "is_ca": true,
                 "expiry": "87600h",
                 "ca_constraint": {
                   "is_ca": true,
